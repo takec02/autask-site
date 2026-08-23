@@ -1,0 +1,45 @@
+/* 審査員は端末のブラウザで開く。凝らないが、これだけは満たす。 */
+:root {
+  /* 暗い設定で白飛びさせない */
+  color-scheme: light dark;
+  --ink: #16202C;
+  --ink-2: #47515E;
+  --line: #D9DFE8;
+  --bg: #FFFFFF;
+  --accent: #1E5A93;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #E9EDF2;
+    --ink-2: #B3C2D2;
+    --line: #2C353F;
+    --bg: #0F141A;
+    --accent: #6FA6DC;
+  }
+}
+body {
+  font-family: -apple-system, "Hiragino Sans", system-ui, sans-serif;
+  line-height: 1.9;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+h1 { font-size: 1.5rem; line-height: 1.5; margin: 0 0 .25rem; }
+h2 { font-size: 1.1rem; margin: 2.5rem 0 .5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1rem; margin: 1.75rem 0 .25rem; }
+p, li { color: var(--ink); }
+a { color: var(--accent); }
+.updated { color: var(--ink-2); font-size: .875rem; margin: 0 0 2rem; }
+.lead { color: var(--ink-2); }
+.note { color: var(--ink-2); font-size: .9rem; }
+/* 表を横にはみ出させない */
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink-2); font-weight: 600; white-space: nowrap; }
+nav { margin-bottom: 2rem; font-size: .9rem; }
+nav a { margin-right: 1rem; }
+.en { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--ink-2); font-size: .9rem; }
