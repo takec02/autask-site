@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>プライバシーポリシー</h1>
-<p class="updated">オータスク（Autask）／最終更新日：2026年8月23日</p>
+<p class="updated">オータスク（Autask）／最終更新日：2026年8月26日</p>
 
 <p>オータスクは、あなたのタスクを外へ持ち出しません。<strong>私たちはサーバーを持っておらず、あなたのタスクを受け取る手立てそのものがありません。</strong></p>
 
@@ -32,15 +32,50 @@
 </ul>
 <p><strong>アナリティクス（利用状況の計測）も、広告のための仕組みも入れていません。</strong>私たちのサーバーは存在しないため、アプリがどこかへ利用状況を送ることはありません。</p>
 
-<h2>Google カレンダーで求める権限</h2>
+<h2>オータスクがアクセスする Google のデータ</h2>
+<p>あなたが連携を許可した場合にかぎり、オータスクは次のものにアクセスします。<strong>これ以外は取得しません。</strong></p>
+<div class="scroll">
+<table>
+  <tr><th>アクセスするもの</th><th>何に使うか</th></tr>
+  <tr><td>予定の<strong>開始時刻・終了時刻・終日かどうか・取り消し済みかどうか</strong></td><td>空いている時間を判定するためだけに使います。端末の中で計算します。</td></tr>
+  <tr><td>カレンダーの<strong>一覧</strong>（識別子・名称・主カレンダーかどうか）</td><td>どのカレンダーを「埋まっている時間」として数えるかを、あなたが選ぶために表示します。</td></tr>
+  <tr><td><strong>認証トークン</strong>（アクセストークン・更新トークン）</td><td>Google カレンダーへの接続を保つために使います。</td></tr>
+</table>
+</div>
+<p><strong>予定のタイトル・説明・参加者・場所・添付ファイルは読み取りません。</strong>アプリの内部でも保持せず、画面にも出さず、保存も送信もしません。</p>
+<p><strong>あなたのお名前やメールアドレスは取得も保存もしていません。</strong></p>
+
+<h2>書き込むもの</h2>
 <div class="scroll">
 <table>
   <tr><th>権限</th><th>何に使うか</th></tr>
-  <tr><td>予定の読み取り</td><td>空いている時間を判定するために使います。読み取るだけです。</td></tr>
-  <tr><td>このアプリが作ったカレンダーへの書き込み</td><td>オータスク専用のカレンダーを1つ作り、そこにだけ配置を書き込みます。</td></tr>
+  <tr><td>このアプリが作ったカレンダーへの書き込み</td><td>「オータスク」という専用カレンダーを1つ作り、<strong>そこにだけ</strong>配置した予定を書き込みます。</td></tr>
 </table>
 </div>
 <p><strong>あなたが入れた予定を変更・削除する権限は要求していません。</strong>権限そのものを持っていないため、技術的にも触れません。</p>
+
+<h2>第三者への提供について</h2>
+<p><strong>オータスクは、Google から取得したデータを、いかなる第三者にも共有・移転・開示しません。</strong></p>
+<ul>
+  <li>私たちはサーバーを持っていません。<strong>Google から取得したデータは、あなたの iPhone と Google の間だけを流れます。</strong>私たちの手元へ届く経路が存在しません。</li>
+  <li>販売しません。広告に使いません。<strong>アナリティクスも広告 SDK も入れていません。</strong></li>
+  <li><strong>AI／機械学習モデルの開発・改良・訓練に使いません。</strong>汎用モデルにも、それ以外のモデルにも使いません。</li>
+  <li>法令に基づく開示請求を受けた場合であっても、私たちは<strong>そもそもデータを保持していないため、提供できるものがありません。</strong></li>
+</ul>
+
+<h2>データの保護</h2>
+<p>Google から取得したデータを守るために、次の仕組みを使っています。</p>
+<ul>
+  <li><strong>認証トークンは iOS の Keychain に保管します。</strong>端末の機能によって暗号化され、他のアプリからは読めません。</li>
+  <li><strong>通信はすべて HTTPS（TLS）です。</strong>暗号化されていない通信経路は使いません。</li>
+  <li><strong>端末内のデータは iOS のサンドボックスと保護機能の下に置かれます。</strong>他のアプリからは読めず、端末が施錠されている間は暗号化されています。</li>
+  <li><strong>認証には PKCE を使い、クライアントシークレットを端末に持ちません。</strong>取り出されて悪用される秘密そのものが存在しません。</li>
+  <li><strong>保管する場所を1つに絞っています。</strong>私たちのサーバーが無いということは、まとめて漏れる場所が無いということです。</li>
+  <li><strong>連携を解除すると、トークンを Google 側で失効させ、端末からも消します。</strong></li>
+</ul>
+
+<h2>保存期間</h2>
+<p>Google から読み取った予定は、<strong>空き時間の計算に使ったあと破棄します。保存しません。</strong>認証トークンは、あなたが連携を解除するかアプリを削除するまで端末に保管されます。</p>
 
 <h2>削除について</h2>
 <ul>
@@ -59,11 +94,47 @@
 <p>プライバシーに関するご質問は <a href="mailto:takec02.oniwaban@gmail.com">takec02.oniwaban@gmail.com</a> までお願いします。</p>
 
 <div class="en">
-<h3>Summary in English</h3>
-<p>Autask has no server. Your tasks, settings and logs are stored only on your iPhone; your Google credentials are stored in the device Keychain. We cannot see any of them.</p>
-<p>The app talks to exactly two services: Google (only if you link your account — to read your events for free-time detection and to write into a dedicated calendar it creates) and Apple (for the subscription). It contains no analytics and no advertising SDKs.</p>
-<p>Autask does not request permission to modify or delete your own calendar events, and therefore cannot. Deleting the app removes all local data; events already written to your Google Calendar remain and can be removed there.</p>
-<p>Contact: takec02.oniwaban@gmail.com</p>
+<h3>English version</h3>
+
+<h4>Google user data that Autask accesses</h4>
+<p>Only if you choose to link your Google account, Autask accesses the following, and nothing else:</p>
+<ul>
+  <li><strong>Calendar event start time, end time, all-day flag, and cancelled status</strong> — used solely to determine when you are already busy.</li>
+  <li><strong>Your calendar list</strong> (identifier, name, and whether it is your primary calendar) — shown to you so you can choose which calendars count as busy.</li>
+  <li><strong>OAuth tokens</strong> (access and refresh tokens) — used to maintain the connection to Google Calendar.</li>
+</ul>
+<p>Autask does <strong>not</strong> read event titles, descriptions, attendees, locations, or attachments. They are never read into application logic, never displayed, never stored, and never transmitted. Autask does not collect or store your name or email address.</p>
+
+<h4>How Autask uses Google user data</h4>
+<p>Event times are used to compute free slots inside your working hours. All computation happens on your device. Autask then writes your tasks into a single dedicated calendar named "オータスク" that it creates. It does not request permission to modify or delete the events you created yourself, and therefore cannot.</p>
+
+<h4>How Autask shares, transfers, or discloses Google user data</h4>
+<p><strong>We do not share, transfer, or disclose Google user data to any third party, for any purpose.</strong></p>
+<ul>
+  <li>We operate no server. Google user data travels only between your device and Google. There is no path by which it could reach us.</li>
+  <li>We do not sell it and do not use it for advertising. The app contains no analytics SDK and no advertising SDK.</li>
+  <li><strong>We do not use Google user data to develop, improve, or train generalized or non-generalized AI and/or ML models.</strong></li>
+  <li>Autask's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+</ul>
+
+<h4>How Autask protects Google user data</h4>
+<ul>
+  <li><strong>OAuth tokens are stored in the iOS Keychain</strong>, encrypted by the device and inaccessible to other applications.</li>
+  <li><strong>All network communication uses HTTPS (TLS).</strong> No unencrypted transport is used.</li>
+  <li><strong>On-device data is protected by the iOS application sandbox and iOS Data Protection</strong>, encrypted at rest while the device is locked and unreadable by other apps.</li>
+  <li><strong>Authentication uses OAuth 2.0 with PKCE and no client secret</strong>, so there is no shared secret on the device that could be extracted and abused.</li>
+  <li><strong>We hold no copy of your data.</strong> Because we run no server, there is no central store that could be breached.</li>
+  <li><strong>Unlinking revokes the tokens with Google and deletes them from the device.</strong></li>
+</ul>
+
+<h4>Data retention and deletion</h4>
+<p>Events read from Google Calendar are used to compute free time and are then discarded; they are never stored. OAuth tokens remain on your device until you unlink your account or delete the app. Deleting the app removes all local data — tasks, settings, run logs, and credentials. Events already written to your Google Calendar remain and can be removed in Google Calendar.</p>
+
+<h4>Children</h4>
+<p>Autask handles work scheduling and is not directed to children under 13.</p>
+
+<h4>Contact</h4>
+<p>takec02.oniwaban@gmail.com</p>
 </div>
 
 <nav style="margin-top:2rem">
